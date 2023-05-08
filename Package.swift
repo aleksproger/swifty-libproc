@@ -4,21 +4,15 @@
 import PackageDescription
 
 let package = Package(
-    name: "LibprocPackage",
+    name: "swifty-libproc",
     platforms: [
         .macOS(.v10_15)
     ],
     products: [
         .library(name: "Libproc", targets: ["Libproc"]),
-        .library(name: "LibprocBridge", targets: ["libprocBridge"])
     ],
     targets: [
-        // Targets are the basic building blocks of a package. A target can define a module or a test suite.
-        // Targets can depend on other targets in this package, and on products in packages this package depends on.
-        .target(
-            name: "Libproc",
-            dependencies: ["libprocBridge"]
-        ),
-        .systemLibrary(name: "libprocBridge")
+        .target(name: "LibprocShim", dependencies: ["Libproc"]),
+        .systemLibrary(name: "Libproc")
     ]
 )
