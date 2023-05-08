@@ -12,7 +12,7 @@ let package = Package(
         .library(name: "Libproc", targets: ["LibprocShim"]),
     ],
     targets: [
-        .target(name: "LibprocShim", dependencies: ["Libproc"], linkerSettings: [.linkedLibrary("libbsm")]),
+        .target(name: "LibprocShim", dependencies: ["Libproc"], linkerSettings: [.linkedLibrary("bsm")]),
         .systemLibrary(name: "Libproc")
     ]
 )
