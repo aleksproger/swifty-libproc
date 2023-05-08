@@ -9,10 +9,10 @@ let package = Package(
         .macOS(.v10_15)
     ],
     products: [
-        .library(name: "Libproc", targets: ["Libproc"]),
+        .library(name: "Libproc", targets: ["LibprocShim"]),
     ],
     targets: [
-        .target(name: "LibprocShim", dependencies: ["Libproc"]),
+        .target(name: "LibprocShim", dependencies: ["Libproc"], linkerSettings: [.linkedLibrary("libbsm")]),
         .systemLibrary(name: "Libproc")
     ]
 )
