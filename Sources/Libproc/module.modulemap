@@ -1,0 +1,5 @@
+module Libproc {
+    header "Libproc.h"
+    link "Libproc"
+    export *
+}

@@ -1,5 +1,0 @@
-module libprocBridge {
-    header "libprocBridge.h"
-    link "libprocBridge"
-    export *
-}
